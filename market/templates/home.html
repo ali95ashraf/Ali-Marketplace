@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block title %}Market Place - Your Digital Marketplace{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+    .hero-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center; background-size: cover; }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .card-hover { transition: transform 0.3s; }
+    .card-hover:hover { transform: translateY(-5px); }
+    .video-container {
+        width: 100%;
+        max-width: 500px; /* Adjust as needed */
+        margin: 0 auto;
+    }
+    .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bg-dark text-white">
+    <!-- Hero Section -->
+    <div class="hero-section py-5 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Revolutionize Your Digital Marketplace</h1>
+                    <p class="lead mb-5">Experience the future of e-commerce with Market Place. Buy, sell, and manage digital products with ease.</p>
+                    <div class="d-flex flex-column flex-sm-row">
+                        <a href="{{ url_for('market_page') }}" class="btn btn-primary btn-lg mb-3 mb-sm-0 me-sm-3 px-4 py-3">Explore Market</a>
+                        <a href="https://github.com/ali95ashraf" target="_blank" class="btn btn-outline-light btn-lg px-4 py-3">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline>
+                            <video src="{{ url_for('static', filename='media/landing.mp4') }}" controls></video>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="bg-secondary py-5 mb-5">
+        <div class="container py-5">
+            <h2 class="text-center mb-5" data-aos="fade-up">Why Choose Market Place?</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card bg-dark text-white h-100 card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-shield-check feature-icon"></i>
+                            <h3 class="card-title h4 mb-3">Secure Platform</h3>
+                            <p class="card-text">State-of-the-art security measures to protect your assets and transactions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card bg-dark text-white h-100 card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-phone feature-icon"></i>
+                            <h3 class="card-title h4 mb-3">User-Friendly Interface</h3>
+                            <p class="card-text">Intuitive design for seamless navigation across all devices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card bg-dark text-white h-100 card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-graph-up feature-icon"></i>
+                            <h3 class="card-title h4 mb-3">Wide Product Range</h3>
+                            <p class="card-text">Access a diverse array of digital products all in one place.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Developer Section -->
+    <div class="container py-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <h2 class="mb-4">About the Developer</h2>
+                <p class="lead">Hi, I'm Ali Ashraf, a passionate web developer specializing in Python and Flask. Market Place is a testament to my commitment to creating robust, user-friendly web applications.</p>
+                <a href="https://github.com/ali95ashraf" target="_blank" class="btn btn-outline-light btn-lg mt-3">Explore My Work</a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="card bg-secondary">
+                    <div class="card-body p-4">
+                        <h3 class="card-title h4 mb-4">Project Highlights</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Flask-based e-commerce platform</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>User authentication and account management</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Product browsing and search functionality</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Shopping cart and checkout process</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+{% endblock %}
