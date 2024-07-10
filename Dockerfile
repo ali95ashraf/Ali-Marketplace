@@ -9,4 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN gunicorn market:app
+RUN export FLASK_APP=run.py
+
+CMD ["flask", "run"]
